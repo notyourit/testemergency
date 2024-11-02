@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Contact Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Emergency Contact Services</h1>
+      <p>Select a category to find emergency contacts in Luzon</p>
+    </header>
+
+    <div class="category-buttons">
+      <button onclick="selectCategory('hospital')">Hospitals</button>
+      <button onclick="selectCategory('firefighters')">Firefighters</button>
+      <button onclick="selectCategory('police')">Police Stations</button>
+    </div>
+
+    <div id="location-select" class="hidden">
+      <h2>Select a Location</h2>
+      <select id="location" onchange="showContacts()">
+        <option value="">-- Select a Location --</option>
+        <option value="manila">Manila</option>
+        <option value="quezon-city">Quezon City</option>
+        <option value="pasig">Pasig</option>
+      </select>
+    </div>
+
+    <div id="contacts" class="hidden">
+      <h2 id="contact-title"></h2>
+      <ul id="contact-list"></ul>
+    </div>
+
+    <div id="phone-screen" class="phone hidden">
+      <div class="phone-header">
+        <p id="call-status">Calling...</p>
+      </div>
+      <div class="phone-body">
+        <p id="call-info"></p>
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/phone.png" alt="Phone Icon" class="phone-icon">
+        <p id="call-timer" class="hidden">00:00</p>
+      </div>
+      <button id="end-call" onclick="endCall()">End Call</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
